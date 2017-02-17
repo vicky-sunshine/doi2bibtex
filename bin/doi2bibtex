@@ -6,10 +6,7 @@ class Doi2bibtexCLI < Thor
   desc 'get DOI', 'see the bibtex of the paper'
   def get(doi)
     bib = Doi2bibtex::Doi2bibtex.new(doi)
-
-    puts "BibTeX of #{doi}:"
     puts "#{bib.bibtex}"
-
   end
 end
 
