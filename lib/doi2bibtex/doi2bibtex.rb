@@ -27,8 +27,12 @@ module Doi2bibtex
       @hash["title"].to_s
     end
 
+    def journal?
+      !@hash["journal"].nil?
+    end
+
     def book_title
-      if @hash["booktitle"].nil?
+      if journal?
         @hash["journal"].to_s
       else
         @hash["booktitle"].to_s
