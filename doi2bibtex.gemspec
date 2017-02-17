@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.executables << 'doi2bibtex'
   s.summary = 'Convert DOI to BibTeX'
   s.description = 'Give DOI of a paper and get corresponding BibTeX'
-  s.authors = ['Vicky Lee']
+  s.authors = ['Chi-Hsuan Li']
   s.email   = ['lch82327@gmail.com']
   s.files       =  `git ls-files`.split("\n")
   s.test_files  =  `git ls-files spec/*`.split("\n")
