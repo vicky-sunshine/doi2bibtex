@@ -1,5 +1,5 @@
-require 'http'
 require 'uri'
+require "cgi"
 
 module Doi2bibtex
   # parse daily weather description from cwb website
@@ -16,7 +16,7 @@ module Doi2bibtex
     end
 
     def url
-      URI.unescape(@hash["url"])
+      CGI.unescape(@hash["url"])
     end
 
     def author
@@ -94,9 +94,16 @@ module Doi2bibtex
     private
 
     def handle_doi_request
-      res = HTTP.headers(:accept => 'application/x-bibtex').get(CROSSREF_URL + doi)
-      if res.code == 200
-        @bibtex ||= res.to_s
+      url = URI(CROSSREF_URL + doi)
+
+      http = Net::HTTP.new(url.host, url.port)
+      request = Net::HTTP::Get.new(url)
+      request["accept"] = 'application/x-bibtex'
+      res = http.request(request)
+
+      # res = HTTP.headers(:accept => 'application/x-bibtex').get(CROSSREF_URL + doi)
+      if res.code.to_i == 200
+        @bibtex ||= res.body
       else
         @bibtex = nil
       end
