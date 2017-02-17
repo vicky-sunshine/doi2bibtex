@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 11.3'
   s.add_development_dependency 'vcr', '~> 3.0'
   s.add_development_dependency 'webmock', '~> 2.1'
-  s.add_development_dependency 'simplecov', '~> 0.12'
 
   s.homepage    =  'https://github.com/vicky-sunshine/doi2bibtex'
   s.license     =  'MIT'
