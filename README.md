@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/vicky-sunshine/doi2bibtex.svg?branch=master)](https://travis-ci.org/vicky-sunshine/doi2bibtex)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Give DOI of a paper and get corresponding BibTeX!
+Give DOI, get corresponding BibTeX!
 
 ## Usage
 
